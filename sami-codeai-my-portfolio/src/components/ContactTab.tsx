@@ -12,7 +12,7 @@ const ContactTab: React.FC = () => (
           <span className="text-green-400 text-xl">📧</span>
           <div>
             <div className="text-green-300 font-semibold">Email</div>
-            <div className="text-green-400/80">your.email@domain.com</div>
+            <div className="text-green-400/80">samiksha.thogeti@gmail.com</div>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ const ContactTab: React.FC = () => (
           <span className="text-green-400 text-xl">💼</span>
           <div>
             <div className="text-green-300 font-semibold">LinkedIn</div>
-            <div className="text-green-400/80">linkedin.com/in/yourprofile</div>
+            <div className="text-green-400/80">linkedin.com/in/samiksha-thogeti</div>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ const ContactTab: React.FC = () => (
           <span className="text-green-400 text-xl">🐙</span>
           <div>
             <div className="text-green-300 font-semibold">GitHub</div>
-            <div className="text-green-400/80">github.com/yourusername</div>
+            <div className="text-green-400/80">github.com/SAMI-CODEAI</div>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ const ContactTab: React.FC = () => (
           <span className="text-green-400 text-xl">📱</span>
           <div>
             <div className="text-green-300 font-semibold">Phone</div>
-            <div className="text-green-400/80">+1 (555) 123-4567</div>
+            <div className="text-green-400/80">+91-9063263893</div>
           </div>
         </div>
       </div>

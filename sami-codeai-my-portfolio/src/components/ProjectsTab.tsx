@@ -2,22 +2,28 @@ import React from "react";
 
 const projectList = [
   {
-    title: "AggieMate – Chrome Extension for UC Davis Schedule Builder",
-    description: "Shipped Chrome extension with 200+ installs improving class planning.",
-    tags: ["JavaScript", "Chrome Extensions", "UI/UX Design", "API Integration"],
-    icon: "🌱"
+    title: "ResumeAgent – Personal Resume QA Agent",
+    description: "AI agent deployed on Hugging Face for answering career and technical questions by interpreting resume and project experience. Features conversational Gradio interface, PDF parsing, secure notification system, and adaptive continuous improvement.",
+    tags: ["Python", "Gradio", "PyPDF", "Hugging Face", "API"],
+    icon: "🤖"
   },
   {
-    title: "China's Rise: Economic Opportunity or Threat to the US?",
-    description: "Comprehensive analysis exploring China's rapid growth and its implications.",
-    tags: ["Python", "Data Analysis", "Economic Research", "Visualization"],
-    icon: "📊"
+    title: "LearnSphere – Intelligent Study Companion",
+    description: "Adaptive learning assistant using OpenAI APIs and RAG for generating notes, quizzes, and flashcards. Integrated FAISS for semantic search across multi-format documents and interactive Streamlit UI for dynamic engagement.",
+    tags: ["Python", "OpenAI API", "FAISS", "Streamlit", "RAG"],
+    icon: "📚"
   },
   {
-    title: "Portfolio Website",
-    description: "Interactive React portfolio with terminal aesthetic and smooth animations.",
-    tags: ["React", "TypeScript", "CSS3", "Web Design"],
-    icon: "💻"
+    title: "AnimeSense – Hybrid Anime Recommendation Engine",
+    description: "Built a hybrid recommender system combining Keras embeddings and metadata-based analysis. Flask API with Dockerized GCP deployment, CI/CD automation, and experiment tracking with DVC and Comet ML.",
+    tags: ["TensorFlow", "Flask", "Docker", "GCP", "DVC"],
+    icon: "🎬"
+  },
+  {
+    title: "OptiStay – Hotel Cancellation Prediction System",
+    description: "End-to-end predictive analytics platform forecasting hotel booking cancellations with ML models and full CI/CD pipeline on GCP. Achieved high accuracy, precision, and F1-score on real-world hotel data.",
+    tags: ["Flask", "ML", "GCP", "Jenkins", "XGBoost"],
+    icon: "🏨"
   }
 ];
 

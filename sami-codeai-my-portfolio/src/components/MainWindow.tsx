@@ -1,7 +1,7 @@
 import React from "react";
 import TabButton from "./TabButton";
 import {
-  faUser, faGift, faFlask, faFolderOpen, faEnvelope, faCodeBranch
+  faUser, faGift, faFolderOpen, faEnvelope, faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 interface MainWindowProps {
@@ -25,9 +25,7 @@ const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
       <div className="terminal-content p-6">
         <div className="space-y-6">
           <div className="ascii-art text-center">
-            {/* <pre className="text-green-400 inline-block text-sm md:text-base"> */}
             <pre className="text-green-500 inline-block text-xs md:text-sm">
-
 {`
 ███████╗ █████╗ ███╗   ███╗██╗██╗  ██╗███████╗██╗  ██╗ █████╗ 
 ██╔════╝██╔══██╗████╗ ████║██║██║ ██╔╝██╔════╝██║  ██║██╔══██╗
@@ -40,14 +38,14 @@ const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
 
           <div className="text-center">
             <div className="text-green-500 text-lg mb-2">
-              CS & Stats ML @UCDavis | Prev. Quant @SocGen
+              B.Tech CSE - AI/ML | Institute of Aeronautical Engineering, Hyderabad
             </div>
             <div className="flex justify-center gap-4 mb-6">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/SAMI-CODEAI" target="_blank" rel="noopener noreferrer" 
                  className="text-green-500 hover:text-green-300 transition-colors">
                 GitHub
               </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+              <a href="https://linkedin.com/in/samiksha-thogeti" target="_blank" rel="noopener noreferrer"
                  className="text-green-500 hover:text-green-300 transition-colors">
                 LinkedIn
               </a>
@@ -57,14 +55,15 @@ const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <TabButton icon={faUser} label="About" onClick={() => openTab("about")} />
             <TabButton icon={faGift} label="Experience" onClick={() => openTab("experience")} />
-            <TabButton icon={faFlask} label="Research" onClick={() => openTab("research")} />
+            {/* <TabButton icon={faFlask} label="Research" onClick={() => openTab("research")} /> */}
             <TabButton icon={faFolderOpen} label="Projects" onClick={() => openTab("projects")} />
             <TabButton icon={faEnvelope} label="Contact" onClick={() => openTab("contact")} />
-            <TabButton icon={faCodeBranch} label="Side Quests" onClick={() => openTab("sidequests")} />
+            <TabButton icon={faFileAlt} label="Resume" onClick={() => openTab("resume")} />
+            {/* <TabButton icon={faCodeBranch} label="Side Quests" onClick={() => openTab("sidequests")} /> */}
           </div>
 
           <div className="text-center text-green-00/60 text-sm mt-6">
-            Click any tab to open a window. Drag windows anywhere on the screen.
+            Select any tab to explore my profile, experience, and skills—move windows freely!
           </div>
         </div>
       </div>

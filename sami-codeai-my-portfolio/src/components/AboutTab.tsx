@@ -1,5 +1,5 @@
 import React from "react";
-import samiImage from "../assets/sami.png";  // Import the image
+// import samiImage from "../assets/sami.png";  // Import the image
 
 const AboutTab: React.FC = () => (
   <div className="about-content p-6">
@@ -9,11 +9,7 @@ const AboutTab: React.FC = () => (
     
     {/* Profile Image */}
     <div className="flex justify-center my-6">
-      <img 
-        src={samiImage}   // Use the imported variable
-        alt="Samiksha Sai Thogeti" 
-        className="w-32 h-32 rounded-lg object-cover border-2 border-terminal/30"
-      />
+      <img src="/assets/sami.png" alt="Samiksha" />
     </div>
     
     <blockquote className="about-quote">

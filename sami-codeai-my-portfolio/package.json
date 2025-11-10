@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "node -e \"const fs=require('fs'), path=require('path'); const binDir=path.join(process.cwd(),'node_modules','.bin'); try{ if(fs.existsSync(binDir)){ fs.readdirSync(binDir).forEach(f=>{ try{ fs.chmodSync(path.join(binDir,f),0o755); }catch(e){} }); } }catch(e){}\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

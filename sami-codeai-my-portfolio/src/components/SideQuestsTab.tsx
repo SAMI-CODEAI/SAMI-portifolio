@@ -1,43 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SideQuestsTab: React.FC = () => (
-  <div className="space-y-6">
-    <div className="tab-content-header">
-      <h2>side quests</h2>
+const QUICK_LINKS = [
+  { label: "GitHub", url: "https://github.com/SAMI-CODEAI" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/samiksha-sai-thogeti-098303298/" },
+  { label: "LeetCode", url: "https://leetcode.com/u/sami_codeai/" },
+  { label: "Kaggle", url: "https://www.kaggle.com/samikshasaithogeti" },
+  { label: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/user/samicoo89g/" },
+];
+
+const SideQuestsTab: React.FC = () => {
+  return (
+    <div className="space-y-6">
+      <div className="tab-content-header">
+        <h2 className="text-green-300"></h2>
+      </div>
+
+      <div className="links-panel p-4 border border-green-500/20 rounded-lg">
+        <p className="text-green-400/80 mb-3">Quick links to my developer profiles and contact:</p>
+        <ul className="space-y-2">
+          {QUICK_LINKS.map((l) => (
+            <li key={l.label}>
+              <a
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-200 hover:text-green-100 underline"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="mailto:samiksha.thogeti@gmail.com" className="text-green-200 hover:text-green-100 underline">Email: samiksha.thogeti@gmail.com</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <div className="space-y-4">
-      <div className="sidequest-item">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-green-400">🥋</span>
-          <h3 className="text-green-300 font-semibold">MMA & Combat Sports</h3>
-        </div>
-        <p className="text-green-400/80 pl-8">
-          Training in mixed martial arts, focusing on Brazilian Jiu-Jitsu and Muay Thai. Competitive athletics and physical conditioning.
-        </p>
-      </div>
-
-      <div className="sidequest-item">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-green-400">🎨</span>
-          <h3 className="text-green-300 font-semibold">Pen & Ink Art</h3>
-        </div>
-        <p className="text-green-400/80 pl-8">
-          Creating detailed crosshatch pen drawings in my sketchbook. Exploring themes of technology, nature, and abstract concepts.
-        </p>
-      </div>
-
-      <div className="sidequest-item">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-green-400">🏹</span>
-          <h3 className="text-green-300 font-semibold">Archery</h3>
-        </div>
-        <p className="text-green-400/80 pl-8">
-          Precision archery training. Focus on traditional recurve bow techniques and mental discipline.
-        </p>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default SideQuestsTab;

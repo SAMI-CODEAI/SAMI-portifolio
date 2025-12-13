@@ -6,8 +6,9 @@ import AboutTab from "./AboutTab";
 import ExperienceTab from "./ExperienceTab";
 import ContactTab from "./ContactTab";
 import Resume from "./Resume";
+import SideQuestsTab from "./SideQuestsTab";
 
-type TabType = 'projects' | 'about' | 'experience' | 'contact' | 'resume';
+type TabType = 'projects' | 'about' | 'experience' | 'contact' | 'resume' | 'sidequests';
 
 const tabComponents = {
   projects: ProjectsTab,
@@ -15,6 +16,7 @@ const tabComponents = {
   experience: ExperienceTab,
   contact: ContactTab,
   resume: Resume,
+  sidequests: SideQuestsTab,
 };
 
 const TabWindowAny = TabWindow as any;

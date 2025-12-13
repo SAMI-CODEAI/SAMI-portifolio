@@ -1,11 +1,11 @@
 import React from "react";
 import TabButton from "./TabButton";
 import {
-  faUser, faGift, faFolderOpen, faEnvelope, faFileAlt
+  faUser, faGift, faFolderOpen, faEnvelope, faFileAlt, faCodeBranch
 } from '@fortawesome/free-solid-svg-icons';
 
 interface MainWindowProps {
-  openTab: (tab: any) => void;
+  openTab: (tab: 'projects' | 'about' | 'experience' | 'contact' | 'resume' | 'sidequests') => void;
 }
 
 const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
@@ -52,18 +52,35 @@ const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
             </div>
           </div>
 
+          {/* Tabs with Centered Boxes */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <TabButton icon={faUser} label="About" onClick={() => openTab("about")} />
-            <TabButton icon={faGift} label="Experience" onClick={() => openTab("experience")} />
-            {/* <TabButton icon={faFlask} label="Research" onClick={() => openTab("research")} /> */}
-            <TabButton icon={faFolderOpen} label="Projects" onClick={() => openTab("projects")} />
-            <TabButton icon={faEnvelope} label="Contact" onClick={() => openTab("contact")} />
-            <TabButton icon={faFileAlt} label="Resume" onClick={() => openTab("resume")} />
-            {/* <TabButton icon={faCodeBranch} label="Side Quests" onClick={() => openTab("sidequests")} /> */}
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faUser} label="About" onClick={() => openTab("about")} />
+            </div>
+
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faGift} label="Experience" onClick={() => openTab("experience")} />
+            </div>
+
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faFolderOpen} label="Projects" onClick={() => openTab("projects")} />
+            </div>
+
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faEnvelope} label="Contact" onClick={() => openTab("contact")} />
+            </div>
+
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faFileAlt} label="Resume" onClick={() => openTab("resume")} />
+            </div>
+
+            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+              <TabButton icon={faCodeBranch} label="Connect" onClick={() => openTab("sidequests")} />
+            </div>
           </div>
 
-          <div className="text-center text-green-00/60 text-sm mt-6">
-            Select any tab to explore my profile, experience, and skills—move windows freely!
+          <div className="text-center text-green-400/60 text-sm mt-6">
+            Select any tab to explore my profile, experience, and skills — move windows freely!
           </div>
         </div>
       </div>

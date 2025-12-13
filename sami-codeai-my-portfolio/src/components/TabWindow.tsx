@@ -5,12 +5,13 @@ interface TabWindowProps {
   zIndex: number;
   onClose: () => void;
   children: React.ReactNode;
+  initialPosition?: { x: number; y: number };
 }
 
-const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children }) => {
+const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children, initialPosition = { x: 200, y: 150 } }) => {
   const windowRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 200, y: 150 });
+  const [position, setPosition] = useState(initialPosition);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseDown = (e: React.MouseEvent) => {

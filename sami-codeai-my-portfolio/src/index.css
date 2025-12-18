@@ -5,6 +5,13 @@
 /* Import a monospace font */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --font-family: 'Fira Code', 'Courier New', monospace;
+  --main-color: #6b7b6b;
+  --muted-color: #a8b5a8;
+  --muted-2: #808f80;
+}
+
 html,
 body,
 #root {
@@ -15,9 +22,19 @@ body,
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  color: #a8b5a8;
+  font-family: var(--font-family);
+  color: var(--main-color);
 }
+
+/* Enforce main color across most textual elements to keep consistent branding */
+body, body * {
+  color: var(--main-color) !important;
+}
+
+a, button, input, textarea {
+  color: inherit;
+}
+
 
 /* Minimal animations */
 @keyframes fadeIn {
@@ -104,7 +121,7 @@ body,
   padding: 1.5rem;
   overflow-y: auto;
   max-height: calc(85vh - 3rem);
-  color: #a8b5a8;
+  color: var(--main-color);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -180,7 +197,7 @@ body,
 }
 
 .card-title {
-  color: #a8b5a8;
+  color: var(--main-color);
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -196,7 +213,7 @@ body,
 }
 
 .card-description {
-  color: #808f80;
+  color: var(--main-color);
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -256,7 +273,7 @@ body,
 .boot-line:nth-child(4) { animation-delay: 0.9s; }
 
 .prompt {
-  color: #4a5a4a;
+  color: var(--main-color);
   margin-right: 0.5rem;
 }
 

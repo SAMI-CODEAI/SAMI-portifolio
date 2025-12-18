@@ -12,55 +12,47 @@ const AboutTab: React.FC = () => (
         <img
           src="/assets/sami.png"
           alt="Samiksha"
-          className="rounded-xl w-48 h-48 object-cover shadow-lg"
+          className="block aspect-square w-40 h-40 object-cover grayscale hover:grayscale-0 transition-[filter] duration-500 rounded-none"
           style={{
-            boxShadow: "0 0 15px 3px rgba(74, 222, 128, 0.4)",
+            border: "1px solid currentColor",
+            boxShadow: "0 0 20px #6b7b6b",
+            willChange: "filter",
           }}
         />
       </div>
     </div>
     
     <blockquote className="about-quote text-green-400/80 text-center italic mb-8">
-      I'm a computer science student specializing in AI and Machine Learning. I build intelligent systems that solve real-world problems and make an impact.
+      A 3rd-year Artificial Intelligence and Machine Learning student at IARE, Hyderabad, focused on the intersection of model development and scalable engineering. I prioritize consistency in my code and depth in my technical foundations.
     </blockquote>
     
     <div className="interest-section space-y-4">
       <div className="interest-item border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
         <span className="text-green-400 text-2xl">🤖</span>
         <div>
-          <div className="interest-title text-green-300 font-semibold">AI Agent Development</div>
+          <div className="interest-title text-green-300 font-semibold">Agentic AI & GenAI</div>
           <div className="interest-description text-green-400/80">
-            Building production-ready agents with LangChain, Crew AI, and OpenAI SDK
+            Exploring autonomous agent orchestration using LangChain and CrewAI, with a focus on Retrieval-Augmented Generation (RAG).
           </div>
         </div>
       </div>
 
       <div className="interest-item border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
-        <span className="text-green-400 text-2xl">🧠</span>
+        <span className="text-green-400 text-2xl">⚙️</span>
         <div>
-          <div className="interest-title text-green-300 font-semibold">Deep Learning & ML</div>
+          <div className="interest-title text-green-300 font-semibold">MLOps & Orchestration</div>
           <div className="interest-description text-green-400/80">
-            Creating models with TensorFlow, PyTorch, and deploying with Docker & Kubernetes
+            Practicing the containerization and deployment of ML models using Docker, Kubernetes (GKE), and CI/CD pipelines.
           </div>
         </div>
       </div>
 
       <div className="interest-item border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
-        <span className="text-green-400 text-2xl">💻</span>
+        <span className="text-green-400 text-2xl">🧩</span>
         <div>
-          <div className="interest-title text-green-300 font-semibold">Full-Stack Development</div>
+          <div className="interest-title text-green-300 font-semibold">Algorithmic Problem Solving</div>
           <div className="interest-description text-green-400/80">
-            React, Flask, Node.js - bringing ML models to life with seamless interfaces
-          </div>
-        </div>
-      </div>
-
-      <div className="interest-item border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
-        <span className="text-green-400 text-2xl">📊</span>
-        <div>
-          <div className="interest-title text-green-300 font-semibold">Problem Solving</div>
-          <div className="interest-description text-green-400/80">
-            150+ LeetCode problems and 60+ GeeksforGeeks challenges solved
+            Regularly refining logic and data structure skills through competitive programming, maintaining a consistent daily coding habit.
           </div>
         </div>
       </div>

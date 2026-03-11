@@ -24,6 +24,24 @@ const projectList = [
     description: "End-to-end predictive analytics platform forecasting hotel booking cancellations with ML models and full CI/CD pipeline on GCP. Achieved high accuracy, precision, and F1-score on real-world hotel data.",
     tags: ["Flask", "ML", "GCP", "Jenkins", "XGBoost"],
     icon: "🏨"
+  },
+  {
+    title: "Agentic Engineering Team",
+    description: "A proof-of-concept trading simulation account management system built entirely by a coordinated team of specialized AI agents. Showcases how autonomous models collaborate under human-defined roles.",
+    tags: ["Python", "CrewAI", "Gradio", "Docker"],
+    icon: "🤖"
+  },
+  {
+    title: "Automated Code Review Agent",
+    description: "A production-ready Multi-Agent System (MAS) built with LangGraph for comprehensive automated code review. Leverages static analysis and LLMs (Gemini/Ollama) to generate security, performance, and style reports.",
+    tags: ["Python", "LangGraph", "Gemini", "Ollama", "Bandit"],
+    icon: "🔍"
+  },
+  {
+    title: "Controlled AI Resume Personalization",
+    description: "A full-stack web application designed to generate job-specific resumes using AI. Features strict hallucination prevention logic and an integrated LaTeX rendering engine.",
+    tags: ["TypeScript", "Next.js", "Python", "FastAPI", "OpenAI"],
+    icon: "🚀"
   }
 ];
 
@@ -32,7 +50,7 @@ const ProjectsTab: React.FC = () => (
     <div className="tab-content-header">
       <h2>projects</h2>
     </div>
-    
+
     <div className="space-y-4">
       {projectList.map((proj, idx) => (
         <div key={idx} className="project-card">

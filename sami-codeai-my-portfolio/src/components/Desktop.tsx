@@ -32,36 +32,18 @@ const Desktop: React.FC = () => {
       return tabPositions.current.get(tabName)!;
     }
 
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const tabWidth = 650;
-    const tabHeight = 600;
-    const padding = 60;
+    // Cascading offset: each new tab is offset by 30px from the previous
+    const CASCADE_OFFSET = 30;
+    // Shift slightly to the right and top to avoid covering center buttons immediately
+    const BASE_X = Math.max(50, (window.innerWidth - 650) / 2 + 150);
+    const BASE_Y = Math.max(40, 60);
+    const tabIndex = tabPositions.current.size;
+    const wrappedIndex = tabIndex % 8; // wrap after 8 tabs
 
-    const cols = Math.floor((windowWidth - 200) / (tabWidth + padding));
-    const rows = Math.floor((windowHeight - 200) / (tabHeight + padding));
-
-    const occupiedPositions = Array.from(tabPositions.current.values());
-
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const x = col * (tabWidth + padding) + padding + 50;
-        const y = row * (tabHeight + padding) + padding + 50;
-
-        const isOccupied = occupiedPositions.some(pos =>
-          Math.abs(pos.x - x) < tabWidth - 100 && Math.abs(pos.y - y) < tabHeight - 100
-        );
-
-        if (!isOccupied && x + tabWidth < windowWidth && y + tabHeight < windowHeight) {
-          const position = { x, y };
-          tabPositions.current.set(tabName, position);
-          return position;
-        }
-      }
-    }
-
-    const offset = (tabPositions.current.size * 50) % 300;
-    const position = { x: 150 + offset, y: 150 + offset };
+    const position = {
+      x: BASE_X + wrappedIndex * CASCADE_OFFSET,
+      y: BASE_Y + wrappedIndex * CASCADE_OFFSET,
+    };
     tabPositions.current.set(tabName, position);
     return position;
   };
@@ -100,6 +82,8 @@ const Desktop: React.FC = () => {
       delete newIndices[tab];
       return newIndices;
     });
+    // Clear saved position so re-opening gets a fresh cascade slot
+    tabPositions.current.delete(tab);
   };
 
   useEffect(() => {

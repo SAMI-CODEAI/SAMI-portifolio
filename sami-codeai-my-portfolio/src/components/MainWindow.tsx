@@ -11,8 +11,8 @@ interface MainWindowProps {
 }
 
 const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
-  <div className="min-h-screen font-mono flex items-center justify-center p-4">
-    <div className="terminal-container w-full max-w-2xl pulse-subtle">
+  <div className="min-h-screen font-mono flex items-center justify-center p-4 pointer-events-none">
+    <div className="terminal-container w-full max-w-2xl pulse-subtle pointer-events-auto">
       <div className="scanline"></div>
       <div className="crt-overlay"></div>
 
@@ -60,27 +60,27 @@ const MainWindow: React.FC<MainWindowProps> = ({ openTab }) => (
 
           {/* Tabs with Centered Boxes */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faUser} label="About" onClick={() => openTab("about")} />
             </div>
 
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faGift} label="Experience" onClick={() => openTab("experience")} />
             </div>
 
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faFolderOpen} label="Projects" onClick={() => openTab("projects")} />
             </div>
 
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faEnvelope} label="Contact" onClick={() => openTab("contact")} />
             </div>
 
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faFileAlt} label="Resume" onClick={() => openTab("resume")} />
             </div>
 
-            <div className="border border-green-500/40 rounded-lg p-2 hover:border-green-300 transition flex justify-center items-center text-center">
+            <div className="border border-green-500/40 rounded-lg hover:border-green-300 transition text-center overflow-hidden">
               <TabButton icon={faCodeBranch} label="Connect" onClick={() => openTab("sidequests")} />
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useAudio } from "../context/AudioContext";
 
 interface TabWindowProps {
   title: string;
@@ -9,10 +10,16 @@ interface TabWindowProps {
 }
 
 const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children, initialPosition = { x: 200, y: 150 } }) => {
+  const { playCloseSound } = useAudio();
   const windowRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState(initialPosition);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const handleClose = () => {
+    playCloseSound();
+    onClose();
+  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!windowRef.current) return;
@@ -77,7 +84,7 @@ const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children,
       }}
     >
       <div className="terminal-header px-4 py-3 flex items-center bg-green-900/30"
-           onMouseDown={handleMouseDown}>
+        onMouseDown={handleMouseDown}>
         <div className="text-terminal text-sm font-light tracking-wide flex items-center gap-2">
           <span>📁</span>
           {title}
@@ -85,7 +92,7 @@ const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children,
         <div className="flex-1"></div>
         <button
           className="text-terminal hover:text-terminal-muted transition-colors text-lg font-bold w-6 h-6 flex items-center justify-center hover:bg-green-900/40 rounded"
-          onClick={onClose}
+          onClick={handleClose}
           onMouseDown={(e) => e.stopPropagation()}
         >
           ×
@@ -93,7 +100,7 @@ const TabWindow: React.FC<TabWindowProps> = ({ title, zIndex, onClose, children,
       </div>
 
       <div className="terminal-content p-6 overflow-y-auto max-h-[calc(80vh-40px)]"
-           onMouseDown={(e) => e.stopPropagation()}>
+        onMouseDown={(e) => e.stopPropagation()}>
         {children}
       </div>
     </div>

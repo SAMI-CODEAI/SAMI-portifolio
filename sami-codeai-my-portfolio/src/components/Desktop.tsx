@@ -25,7 +25,7 @@ const Desktop: React.FC = () => {
   const [openTabs, setOpenTabs] = useState<TabType[]>([]);
   const [zIndices, setZIndices] = useState<Record<TabType, number>>({} as Record<TabType, number>);
   const [maxZIndex, setMaxZIndex] = useState(100);
-  const tabPositions = useRef<Map<TabType, {x: number, y: number}>>(new Map());
+  const tabPositions = useRef<Map<TabType, { x: number, y: number }>>(new Map());
 
   const findEmptySpace = (tabName: TabType) => {
     if (tabPositions.current.has(tabName)) {
@@ -37,31 +37,31 @@ const Desktop: React.FC = () => {
     const tabWidth = 650;
     const tabHeight = 600;
     const padding = 60;
-    
+
     const cols = Math.floor((windowWidth - 200) / (tabWidth + padding));
     const rows = Math.floor((windowHeight - 200) / (tabHeight + padding));
-    
+
     const occupiedPositions = Array.from(tabPositions.current.values());
-    
+
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         const x = col * (tabWidth + padding) + padding + 50;
         const y = row * (tabHeight + padding) + padding + 50;
-        
-        const isOccupied = occupiedPositions.some(pos => 
+
+        const isOccupied = occupiedPositions.some(pos =>
           Math.abs(pos.x - x) < tabWidth - 100 && Math.abs(pos.y - y) < tabHeight - 100
         );
-        
+
         if (!isOccupied && x + tabWidth < windowWidth && y + tabHeight < windowHeight) {
-          const position = {x, y};
+          const position = { x, y };
           tabPositions.current.set(tabName, position);
           return position;
         }
       }
     }
-    
+
     const offset = (tabPositions.current.size * 50) % 300;
-    const position = {x: 150 + offset, y: 150 + offset};
+    const position = { x: 150 + offset, y: 150 + offset };
     tabPositions.current.set(tabName, position);
     return position;
   };
@@ -116,7 +116,7 @@ const Desktop: React.FC = () => {
   }, [bringToFront]);
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden font-mono">
+    <div className="min-h-screen relative overflow-hidden font-mono">
       {/* Matrix rain effect */}
       <div className="fixed inset-0 opacity-5 pointer-events-none">
         <div className="matrix-rain"></div>
@@ -129,22 +129,22 @@ const Desktop: React.FC = () => {
 
       {/* Scanline effect */}
       <div className="scanline"></div>
-      
+
       {/* Main Window - Fixed in center */}
       <div className="fixed inset-0 flex items-center justify-center p-4 z-10">
         <MainWindow openTab={openTab} />
       </div>
-      
+
       {/* Tab Windows - Can be dragged anywhere */}
       {openTabs.map((tab, index) => {
         const Component = tabComponents[tab];
         const position = findEmptySpace(tab);
         return (
-          <TabWindowAny 
-            key={tab} 
+          <TabWindowAny
+            key={tab}
             title={tab}
             initialPosition={position}
-            zIndex={zIndices[tab] || 100 + index} 
+            zIndex={zIndices[tab] || 100 + index}
             onClose={() => closeTab(tab)}
           >
             <Component />

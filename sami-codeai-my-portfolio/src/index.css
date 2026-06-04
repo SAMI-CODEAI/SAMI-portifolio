@@ -44,9 +44,9 @@
   --minimize-btn: #ffbd2e;
   --maximize-btn: #28ca42;
 
-  /* Custom cursor — green circle */
-  --cursor-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:rgb(120,180,140);'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
-  --cursor-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:rgb(74,222,128);'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
+  /* Custom cursor — #5a8c5a matches --text-accent */
+  --cursor-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:%235a8c5a;'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
+  --cursor-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:%2378a878;'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
 }
 
 /* ═══════════════════════════════════════════
@@ -84,9 +84,9 @@ html.light-theme {
   --minimize-btn: #ffbd2e;
   --maximize-btn: #28ca42;
 
-  /* Custom cursor — green circle (matching dark mode) */
-  --cursor-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:rgb(120, 180, 140);'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
-  --cursor-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:rgb(74, 222, 128);'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
+  /* Custom cursor — #3d7a3d matches light --text-accent */
+  --cursor-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:%233d7a3d;'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
+  --cursor-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:%234a6741;'><circle cx='8' cy='8' r='5'/></svg>") 8 8, auto;
 }
 
 /* ═══════════════════════════════════════════
@@ -181,7 +181,6 @@ textarea {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
-  position: relative;
 }
 
 .terminal-header {
@@ -258,27 +257,24 @@ textarea {
   margin: 2rem 0;
 }
 
-.tab-btn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 1rem 0.75rem;
+.tab-button {
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
   color: var(--text-primary);
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   font-size: 0.85rem;
+  cursor: var(--cursor-pointer) !important;
 }
 
-.tab-btn:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--border-hover);
-  color: var(--text-muted);
-}
-
-.tab-btn svg {
+.tab-button svg {
   font-size: 1.25rem;
 }
 

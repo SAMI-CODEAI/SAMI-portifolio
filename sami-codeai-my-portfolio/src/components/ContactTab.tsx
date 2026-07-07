@@ -2,10 +2,7 @@ import React from "react";
 
 const ContactTab: React.FC = () => (
   <div className="space-y-6">
-    <div className="tab-content-header">
-      <h2>contact</h2>
-    </div>
-    
+
     <div className="space-y-4">
       <div className="contact-item">
         <div className="flex items-center gap-4">

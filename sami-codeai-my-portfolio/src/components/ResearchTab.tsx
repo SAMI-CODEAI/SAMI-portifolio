@@ -2,10 +2,7 @@ import React from "react";
 
 const ResearchTab: React.FC = () => (
   <div className="space-y-6">
-    <div className="tab-content-header">
-      <h2>research</h2>
-    </div>
-    
+
     <div className="space-y-4">
       <div className="research-item">
         <div className="flex items-center gap-3 mb-2">

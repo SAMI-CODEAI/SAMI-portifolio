@@ -2,10 +2,7 @@ import React from "react";
 
 const AboutTab: React.FC = () => (
   <div className="about-content p-6">
-    <div className="about-header">
-      <h2 className="text-green-300">about me</h2>
-    </div>
-    
+
     {/* Profile Image */}
     <div className="flex justify-center my-6">
       <div className="relative">
@@ -21,11 +18,11 @@ const AboutTab: React.FC = () => (
         />
       </div>
     </div>
-    
+
     <blockquote className="about-quote text-green-400/80 text-center italic mb-8">
       A 3rd-year Artificial Intelligence and Machine Learning student at IARE, Hyderabad, focused on the intersection of model development and scalable engineering. I prioritize consistency in my code and depth in my technical foundations.
     </blockquote>
-    
+
     <div className="interest-section space-y-4">
       <div className="interest-item border border-green-400/30 rounded-lg p-4 flex items-start gap-3">
         <span className="text-green-400 text-2xl">🤖</span>

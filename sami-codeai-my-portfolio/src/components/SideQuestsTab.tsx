@@ -11,10 +11,6 @@ const QUICK_LINKS = [
 const SideQuestsTab: React.FC = () => {
   return (
     <div className="space-y-6">
-      <div className="tab-content-header">
-        <h2 className="text-green-300"></h2>
-      </div>
-
       <div className="links-panel p-4 border border-green-500/20 rounded-lg">
         <p className="text-green-400/80 mb-3">Quick links to my developer profiles and contact:</p>
         <ul className="space-y-2">

@@ -8,6 +8,11 @@
 
 Deployed via **GitHub Pages**: [sami-codeai.github.io/SAMI-portifolio](https://sami-codeai.github.io/SAMI-portifolio)
 
+
+---
+
+![SAMI Portfolio Desktop](./web.png)
+
 ---
 
 ## ✨ Features

@@ -3,12 +3,7 @@
 > A retro-terminal-themed developer portfolio built as an interactive desktop OS simulation. Features a boot sequence, draggable windows, a matrix rain background, and CRT scanline aesthetics — all running in the browser.
 
 ---
-
-## 🌐 Live Demo
-
-Deployed via **GitHub Pages**: [sami-codeai.github.io/SAMI-portifolio](https://sami-codeai.github.io/SAMI-portifolio)
-
----
+![alt text](image.png)
 
 ## ✨ Features
 
